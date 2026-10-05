@@ -65,6 +65,15 @@ The design follows JCTools' `MpscUnboundedXaddArrayQueue`.
 
 The capacity is soft: producers that race at the limit can each go over it by one element, or by one `putAll` batch. Producers compare against a cached limit, so they only read the consumer's index near the capacity. A producer that has to wait spins briefly, then blocks on a lock. Only waiting producers take that lock, plus the consumer when it has producers to wake up.
 
+## Performance
+
+Compared with the lock-based batched array queue it replaced in the Oxia Java client, with paced producers on Linux (a VM with 8 vCPUs):
+
+- `put()` stays at 67–249 ns from 1 to 32 producers, while the lock queue's climbs to 11–23 µs with 32 producers.
+- Median end-to-end latency drops by up to 17× with many producers, and with 32 producers the lock queue can't sustain 4M ops/s.
+
+The bounded queue hasn't been measured yet. See [benchmark](benchmark/README.md) for the method, the full results and how to run it.
+
 ## Building
 
 ```bash

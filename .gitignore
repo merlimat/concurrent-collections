@@ -14,3 +14,6 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Benchmark output (committed results go in benchmark/results/)
+benchmark/results.csv

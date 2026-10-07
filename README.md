@@ -1,26 +1,30 @@
-# concurrent-queues
+# concurrent-collections
 
-Lock-free, multi-producer single-consumer queues for Java, which the consumer drains in batches.
+Concurrent data structures for Java. The library has no dependencies and needs Java 17 or later.
+
+## Queues
+
+Package `io.github.merlimat.concurrent.queue`: lock-free, multi-producer single-consumer queues, which the consumer drains in batches.
 
 - **`MpscUnboundedBatchedQueue`**: unbounded. Producers never block.
 - **`MpscBoundedBatchedQueue`**: the same design with a soft capacity. Producers wait when the consumer falls behind.
 
-Both implement `BatchedBlockingQueue`: a `BlockingQueue` plus `putAll`, `takeAll` and `pollAll`, with the same signatures as BookKeeper's `BatchedBlockingQueue`. The library has no dependencies and needs Java 17 or later.
+Both implement `BatchedBlockingQueue`: a `BlockingQueue` plus `putAll`, `takeAll` and `pollAll`, with the same signatures as BookKeeper's `BatchedBlockingQueue`.
 
 ## Usage
 
 Gradle:
 
 ```kotlin
-implementation("io.github.merlimat.queues:concurrent-queues:$version")
+implementation("io.github.merlimat:concurrent-collections:$version")
 ```
 
 Maven:
 
 ```xml
 <dependency>
-  <groupId>io.github.merlimat.queues</groupId>
-  <artifactId>concurrent-queues</artifactId>
+  <groupId>io.github.merlimat</groupId>
+  <artifactId>concurrent-collections</artifactId>
   <version>${version}</version>
 </dependency>
 ```

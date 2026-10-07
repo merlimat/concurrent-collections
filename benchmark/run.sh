@@ -28,7 +28,7 @@ for round in $(seq 1 "$ROUNDS"); do
       order=$QUEUES
       if (( round % 2 == 0 )); then order=""; for q in $QUEUES; do order="$q $order"; done; fi
       for queue in $order; do
-        line=$(java $JAVA_OPTS -cp "$CP" io.github.merlimat.queues.benchmark.QueueLatencyBenchmark \
+        line=$(java $JAVA_OPTS -cp "$CP" io.github.merlimat.concurrent.benchmark.QueueLatencyBenchmark \
           "$queue" "$producers" "$rate" "$WARMUP" "$MEASURE")
         echo "$round,${line:-$queue,$producers,$rate,ERROR}" | tee -a "$OUT"
       done

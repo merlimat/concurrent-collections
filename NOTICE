@@ -1,2 +1,2 @@
-concurrent-queues - Lock-free batched queues for Java
+concurrent-collections - Concurrent data structures for Java
 Copyright 2026 Matteo Merli <matteo.merli@gmail.com>

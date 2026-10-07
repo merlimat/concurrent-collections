@@ -18,5 +18,5 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 application {
-    mainClass = "io.github.merlimat.queues.benchmark.QueueLatencyBenchmark"
+    mainClass = "io.github.merlimat.concurrent.benchmark.QueueLatencyBenchmark"
 }

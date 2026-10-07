@@ -1,2 +1,2 @@
-rootProject.name = "concurrent-queues"
+rootProject.name = "concurrent-collections"
 include("benchmark")

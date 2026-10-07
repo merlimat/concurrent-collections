@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.merlimat.queues.benchmark;
+package io.github.merlimat.concurrent.benchmark;
 
-import io.github.merlimat.queues.BatchedBlockingQueue;
-import io.github.merlimat.queues.MpscBoundedBatchedQueue;
-import io.github.merlimat.queues.MpscUnboundedBatchedQueue;
+import io.github.merlimat.concurrent.queue.BatchedBlockingQueue;
+import io.github.merlimat.concurrent.queue.MpscBoundedBatchedQueue;
+import io.github.merlimat.concurrent.queue.MpscUnboundedBatchedQueue;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 import java.util.concurrent.locks.LockSupport;
